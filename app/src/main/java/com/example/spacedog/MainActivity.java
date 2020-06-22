@@ -168,11 +168,6 @@ public class MainActivity extends AppCompatActivity{
         AlertDialog alert = builder.create();
         alert.show();
     }
-
-    public void onBackPressed1() {
-        int l = 3 ;
-
-    }
 }
 
 
