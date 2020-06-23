@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SpaceDog</string>
+    <string name="score">SCORE</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="play">PLAY</string>
+    <string name="settings">SETTINGS</string>
+    <string name="high_score">HIGH SCORE</string>
+    <string name="music">music</string>
+    <string name="sound">sound</string>
+    <string name="space_dog">SPACE DOG</string>
+    <string name="nice_game">Nice game!</string>
+    <string name="enter_name">Enter name</string>
+    <string name="save_score">Save score</string>
+</resources>

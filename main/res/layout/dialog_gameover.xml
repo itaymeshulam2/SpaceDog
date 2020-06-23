@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:background="@drawable/blue_earth"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nice_game"
+        android:fontFamily="@font/virgo"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score_tv"
+        android:layout_marginTop="20dp"
+        android:text="@string/score"
+        android:fontFamily="@font/virgo"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:fontFamily="@font/virgo"
+            android:textAlignment="center"
+            android:hint="@string/enter_name"
+            android:textColorHint="#FFF"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:id="@+id/name_et"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/virgo"
+            android:text="@string/save_score"
+            android:id="@+id/save_score_btn"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_replay_black_24dp"
+            android:id="@+id/play_again_btn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/ic_home_black_24dp"
+            android:id="@+id/main_menu_btn"/>
+
+    </LinearLayout>
+
+</LinearLayout>
