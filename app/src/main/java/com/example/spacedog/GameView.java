@@ -39,7 +39,8 @@ public class GameView extends SurfaceView implements Runnable {
     int score;
 
     //the high Scores Holder
-    int highScore[] = new int[4];
+    public static int highScore[] = new int[10];
+    public static String namePlayer [] = new String[10];
 
     //Shared Preferences to store the High Scores
     SharedPreferences sharedPreferences;
@@ -155,6 +156,23 @@ public class GameView extends SurfaceView implements Runnable {
         highScore[1] = sharedPreferences.getInt("score2",0);
         highScore[2] = sharedPreferences.getInt("score3",0);
         highScore[3] = sharedPreferences.getInt("score4",0);
+        highScore[4] = sharedPreferences.getInt("score5",0);
+        highScore[5] = sharedPreferences.getInt("score6",0);
+        highScore[6] = sharedPreferences.getInt("score7",0);
+        highScore[7] = sharedPreferences.getInt("score8",0);
+        highScore[8] = sharedPreferences.getInt("score9",0);
+        highScore[9] = sharedPreferences.getInt("score10",0);
+
+        namePlayer[0] = sharedPreferences.getString("namePlayer1","");
+        namePlayer[1] = sharedPreferences.getString("namePlayer2","");
+        namePlayer[2] = sharedPreferences.getString("namePlayer3","");
+        namePlayer[3] = sharedPreferences.getString("namePlayer4","");
+        namePlayer[4] = sharedPreferences.getString("namePlayer5","");
+        namePlayer[5] = sharedPreferences.getString("namePlayer6","");
+        namePlayer[6] = sharedPreferences.getString("namePlayer7","");
+        namePlayer[7] = sharedPreferences.getString("namePlayer8","");
+        namePlayer[8] = sharedPreferences.getString("namePlayer9","");
+        namePlayer[9] = sharedPreferences.getString("namePlayer10","");
 
         gameSound = sharedPreferences.getBoolean("sound",true);
         gameMusic = sharedPreferences.getBoolean("music",true);
@@ -472,21 +490,27 @@ public class GameView extends SurfaceView implements Runnable {
     public void saveHighScore(String name){
 
         int temp;
+        String tempName;
         //Assigning the scores to the highScore integer array
-        for(int j=0;j<4;j++){
+        for(int j=0;j< 10;j++){
             if( highScore[j] < score ){
+                tempName = namePlayer[j];
                 temp = highScore[j];
+
+                namePlayer[j] = name;
                 highScore[j] = score;
+
+                name = tempName;
                 score = temp;
             }
         }
 
         //storing the scores through shared Preferences
         SharedPreferences.Editor e = sharedPreferences.edit();
-        for(int n=0;n<4;n++){
+        for(int n=0;n<10;n++){
             e.putInt("score"+(n+1),highScore[n]);
+            e.putString("namePlayer"+(n+1),namePlayer[n]);
         }
         e.commit();
     }
-
 }

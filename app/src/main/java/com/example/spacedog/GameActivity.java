@@ -57,22 +57,30 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 gameView.pause();
-                AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
-                builder.setTitle("Game Pause").setMessage("Do you want to exit?")
-                        .setCancelable(false)
-                        .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                GameView.stopMusic();
-                                finish();
-                            }
-                        })
-                        .setNegativeButton("Resume", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                                gameView.resume();
-                            }
-                        });
-                AlertDialog alert = builder.create();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
+                View dialogGamePause = getLayoutInflater().inflate(R.layout.dialog_game_pause, null);
+
+                builder.setView(dialogGamePause);
+                final AlertDialog alert = builder.create();
+
+                Button buttonRes = dialogGamePause.findViewById(R.id.bottom_res);
+                Button buttonExit = dialogGamePause.findViewById(R.id.bottom_exit);
+
+                buttonExit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        GameView.stopMusic();
+                        finish();
+                    }
+                });
+
+                buttonRes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alert.cancel();;
+                        gameView.resume();
+                    }
+                });
                 alert.show();
             }
         });

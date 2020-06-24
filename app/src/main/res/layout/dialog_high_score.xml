@@ -8,41 +8,13 @@
     android:orientation="vertical"
     android:background="@drawable/background">
 
-    <TextView
+    <ListView
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="30dp"
-        android:id="@+id/textView" />
+        android:id="@+id/listView" />
 
-    <TextView
-        android:textColor="@android:color/white"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/textView2"
-        />
-
-    <TextView
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/textView3"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:id="@+id/textView4"
-        />
 </LinearLayout>
